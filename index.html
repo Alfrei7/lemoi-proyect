@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lemoi Indumentarias</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Lemoi Indumentaria</h1>
+            <nav>
+                <ul>
+                    <li><a href="#">Productos</a>
+                        <ul>
+                            <li><a href="#">Remeras</a></li>
+                            <li><a href="#">Pantalones</a></li>
+                            <li><a href="#">Medias</a></li>
+                            <li><a href="#">Abrigos</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Quiénes Somos</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <div class="sidebar">
+        <h2>Categorías</h2>
+        <ul>
+            <li><a href="#">Hombres</a></li>
+            <li><a href="#">Mujeres</a></li>
+            <li><a href="#">Niños</a></li>
+        </ul>
+    </div>
+    
+    <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
+    
+    <main class="product-section">
+        <div class="container">
+            <div class="product-box product-box-1">
+                <div class="product-images">
+                    <img src="images/remera-adidas1.jpg" alt="Remeras">
+                    <img src="images/remera-nike1.jpg" alt="Remeras">
+                </div>
+                <div class="product-gallery">
+                    <button class="gallery-prev">&#10094;</button>
+                    <button class="gallery-next">&#10095;</button>
+                    <div class="gallery-dots"></div>
+                </div>
+
+                <h3>Remeras básicas Adidas / Nike</h3>
+                <p>Precio: $XX.XX</p>
+            </div>
+
+            <div class="product-box product-box-2">
+                <img src="images/remeraAdidas1.jpg" alt="Remeras">
+                <img src="images/remeraAdidas2.jpg" alt="Remeras">
+                <div class="product-gallery">
+                    <button class="gallery-prev">&#10094;</button>
+                    <button class="gallery-next">&#10095;</button>
+                    <div class="gallery-dots"></div>
+                </div>
+
+                <h3>Remeras Adidas</h3>
+                <p>Precio: $XX.XX</p>
+            </div>
+
+            <div class="product-box product-box-3">
+                <img src="images/bermudaNike1.jpg" alt="Producto 1">
+                <img src="images/bermudaUnder1.jpg" alt="Producto 1">
+                <div class="product-gallery">
+                    <button class="gallery-prev">&#10094;</button>
+                    <button class="gallery-next">&#10095;</button>
+                    <div class="gallery-dots"></div>
+                </div>
+
+                <h3>Bermudas Nike / Under Armour</h3>
+                <p>Precio: $XX.XX</p>
+            </div>
+
+            <div class="product-box product-box-4">
+                <img src="images/joggin-nike.jpg" alt="Producto 1">
+                <img src="images/joggin-nike2.jpg" alt="Producto 1">
+                <div class="product-gallery">
+                    <button class="gallery-prev">&#10094;</button>
+                    <button class="gallery-next">&#10095;</button>
+                    <div class="gallery-dots"></div>
+                </div>
+
+                <h3>Joggin Nike</h3>
+                <p>Precio: $XX.XX</p>
+            </div>
+
+            <div class="product-box product-box-5">
+                <img src="images/rompevientosNike.jpg" alt="Producto 1">
+                <img src="images/rompevientosNike2.jpg" alt="Producto 1">
+                <div class="product-gallery">
+                    <button class="gallery-prev">&#10094;</button>
+                    <button class="gallery-next">&#10095;</button>
+                    <div class="gallery-dots"></div>
+                </div>
+
+                <h3>Rompevientos Nike</h3>
+                <p>Precio: $XX.XX</p>
+            </div>
+
+            <div class="product-box product-box-6">
+                <img src="images/shortnikeMujer.jpg" alt="Producto 1">
+                <img src="images/shortnikeMujer2.jpg" alt="Producto 1">
+                <div class="product-gallery">
+                    <button class="gallery-prev">&#10094;</button>
+                    <button class="gallery-next">&#10095;</button>
+                    <div class="gallery-dots"></div>
+                </div>
+
+                <h3>Short Nike Mujer</h3>
+                <p>Precio: $XX.XX</p>
+            </div>
+
+            <!-- Repetir este bloque para los demás productos -->
+        </div>
+    </main>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
