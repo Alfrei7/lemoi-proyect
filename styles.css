@@ -1,261 +1,391 @@
-/* Estilos generales */
 body {
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: Arial, sans-serif;
+    background-color: #1e2528; /* Color de fondo del sitio */
+    color: #ffffff;
     margin: 0;
-    overflow-y: scroll; /* Mostrar la barra de desplazamiento vertical en todo momento */
-    scrollbar-width: thin; /* Establecer el ancho de la barra de desplazamiento */
-    scrollbar-color: #171f25 #090f13; /* Establecer el color de la barra de desplazamiento */
-    background-color: #090f13;
-    color: #fff;
+    padding: 0;
 }
 
-/* Estilos de la barra de desplazamiento */
-body::-webkit-scrollbar {
-    width: 8px; /* Ancho de la barra de desplazamiento */
+header {
+    background-color: #ffffff; /* Color de fondo del header */
+    padding: 10px 0;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    border-radius: 15px;
+    position: fixed; /* Fijar el header en la parte superior */
 }
-
-body::-webkit-scrollbar-track {
-    background: #090f13; /* Color del fondo de la barra de desplazamiento */
-}
-
-body::-webkit-scrollbar-thumb {
-    background-color: #171f25; /* Color del área desplazable de la barra de desplazamiento */
-    border-radius: 10px; /* Radio de borde de la barra de desplazamiento */
-}
-
-/* Estilos de las cajas de productos */
-
 
 .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 20px; /* Añadir espacio a los lados */
 }
 
-/* Estilos del header */
-header {
-    background-color: #fff;
-    padding: 20px;
-    border-radius: 0 0 20px 20px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-header h1 {
-    margin: 0;
-    font-size: 24px;
-    float: left;
-    color: #171f25;
-}
-
-nav {
-    float: right;
+.logo img {
+    max-width: 100px;
+    margin-top: 10px; /* Ajustar el margen superior del logo */
 }
 
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
 }
 
 nav ul li {
-    display: inline-block;
-    margin-left: 20px;
-    position: relative;
+    margin-right: 20px;
+}
+
+nav ul li:last-child {
+    margin-right: 0;
 }
 
 nav ul li a {
-    color: #171f25;
+    color: #1e2528;
     text-decoration: none;
-    padding: 10px;
-    display: block;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
-nav ul ul {
-    display: none;
+nav ul li a:hover {
+    color: #7dbeb8;
+}
+
+
+nav ul li a.btn {
+    background-color: #e32f21; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    padding: 10px 20px; /* Espacio interno */
+    border-radius: 5px; /* Borde redondeado */
+    transition: background-color 0.3s;
+}
+
+/* Estilo al pasar el ratón sobre los botones */
+nav ul li a.btn:hover {
+    background-color: #7dbeb8; /* Cambio de color al pasar el ratón */
+}
+
+/* Animación para el ícono del carrito */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Estilos para el carrito */
+
+#carrito {
+    position: relative;
+}
+
+
+#carrito:hover #carrito-dropdown {
+    display: block; /* Mostrar el contenido al pasar el ratón sobre el carrito */
+}
+
+#carrito-dropdown {
+    display: none; /* Ocultar el contenido del carrito por defecto */
     position: absolute;
-    top: 100%;
-    left: 0;
-    background-color: #fff;
-    border-radius: 0 0 5px 5px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-nav ul ul li {
-    display: block;
-    width: 100%;
-    margin-left: 0;
-}
-
-nav ul ul li a {
-    padding: 10px 20px;
-}
-
-nav ul li:hover > ul {
-    display: block;
-}
-
-/* Estilos del sidebar */
-.sidebar {
-    background-color: #171f25;
-    color: #fff;
-    width: 200px;
-    height: 100vh;
-    position: fixed;
-    top: 0;
-    left: -200px; /* Ocultar la barra lateral fuera de la pantalla */
-    transition: left 0.3s ease; /* Agregar transición para suavizar el movimiento */
-    z-index: 999;
-}
-
-.sidebar.open {
-    left: 0; /* Mostrar la barra lateral desplazándola hacia la derecha */
-}
-.sidebar h2 {
-    padding: 20px;
-    margin: 0;
-}
-
-.sidebar ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.sidebar ul li {
-    padding: 10px 20px;
-}
-
-.sidebar ul li a {
-    color: #fff;
-    text-decoration: none;
-}
-
-.toggle-btn {
-    position: fixed;
-    top: 20px;
-    left: 20px;
-    font-size: 24px;
-    background-color: #752e2b;
-    color: #fff;
-    border: none;
-    border-radius: 50%;
-    width: 40px;
-    height: 40px;
-    cursor: pointer;
+    top: 50px; /* Posición del contenido del carrito debajo del ícono */
+    right: 0;
+    background-color: #1e2528;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
     z-index: 1000;
 }
 
-.toggle-btn:focus {
-    outline: none;
+/* Estilos para el contenido del carrito */
+#carrito-dropdown img {
+    width: 50px;
+    border-radius: 50%;
+    margin-right: 10px;
 }
 
-.toggle-btn:hover {
-    background-color: #c90a02;
-}
-
-.toggle-btn.open {
-    left: 180px;
-}
-
-/* Estilos de la sección de productos */
-.product-section {
-    padding-top: 80px; /* Para evitar que la barra de navegación cubra los productos */
-}
-
-.container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    grid-gap: 20px;
-}
-
-.product-box {
-    background-color: #171f25;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 2px 4px rgba(201, 24, 24, 0.1);
-    position: relative;
-    overflow: hidden;
-    height: 400px; /* Tamaño fijo para todas las cajas de producto */
+#carrito-dropdown .producto-info {
     display: flex;
-    flex-direction: column; /* Alinear contenido verticalmente */
-    justify-content: space-between; /* Espacio uniforme entre elementos */
+    align-items: center;
+    margin-bottom: 10px;
 }
 
-.product-box img {
-    width: 100%;
-    height: auto;
-    position: relative; /* Agregar posición relativa para imágenes */
+#carrito-dropdown .producto-info p {
+    margin: 0;
 }
 
-.product-box:hover img {
-    transform: scale(1.1);
-}
-
-.product-box .product-images img {
-    display: none; /* Ocultar todas las imágenes por defecto */
-    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
-}
-
-.product-box .product-images img:first-child {
-    display: block; /* Mostrar solo la primera imagen */
-}
-
-.product-gallery {
-    position: absolute;
-    top: 50%;
-    left: 0;
-    transform: translateY(-50%);
-    width: 100%;
-    display: flex;    
-}
-
-.gallery-prev,
-.gallery-next {
-    background-color: transparent; /* Cambiar el color de fondo a transparente */
-    color: #fff;
+/* Dropdown Button */
+.dropbtn {
+    font-size: 16px;
     border: none;
-    padding: 10px;
-    font-size: 20px;
-    cursor: pointer;
+    outline: none;
+    color: #1e2528;
+    padding: 10px 16px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
 
-.gallery-prev {
-    left: 10px;
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
 }
 
-.gallery-next {
-    right: 10px;
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
 }
 
-.gallery-prev:hover,
-.gallery-next:hover {
-    background-color: rgba(0, 0, 0, 0.8); /* Mantener el sombreado al pasar el cursor */
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+    display: block;
 }
 
-.gallery-dots {
-    position: absolute;
-    bottom: 10px;
-    left: 50%;
-    transform: translateX(-50%);
+/* Animación para el ícono del carrito */
+#carrito svg {
+    transition: transform 0.3s ease;
+}
+
+#carrito:hover svg {
+    transform: scale(1.1); /* Aumentar el tamaño al pasar el ratón sobre el carrito */
+}
+
+@keyframes agregarProducto {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.animacion-agregar {
+    animation: agregarProducto 0.5s ease-in-out;
+}
+
+/* sitio */
+
+main {
+    padding: 20px;
+}
+
+footer {
+    background-color: #1e2528;
+    color: #ffffff;
+    padding: 20px 0;
+    font-family: Arial, sans-serif; /* Fuente del texto */
+}
+
+.footer-container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Centramos los elementos horizontalmente */
     align-items: center;
-    z-index: 1; /* Asegurar que esté por encima de las imágenes */
+    max-width: 1200px;
+    margin: 0 auto; /* Centramos horizontalmente */
 }
 
-.gallery-dot {
-    width: 10px;
-    height: 10px;
-    background-color: rgba(255, 255, 255, 0.5); /* Cambiar el color de fondo */
-    border-radius: 50%;
-    margin: 0 5px;
+.footer-logo img {
+    max-width: 100px; /* Tamaño máximo del logo */
+    display: block; /* Aseguramos que el logo se centre correctamente */
+    margin: 0 auto; /* Centramos horizontalmente */
+}
+
+.footer-links ul,
+.contact-info,
+.shipping-info {
+    flex-basis: calc(33.33% - 20px); /* Ancho de las secciones */
+    margin-bottom: 20px; /* Espacio entre las secciones */
+    text-align: center; /* Centramos el contenido */
+    padding-left: 0; 
+    text-align: center;
+}
+
+.footer-links h3,
+.contact-info h3,
+.shipping-info h3 {
+    margin-bottom: 10px; /* Espacio entre el título y el contenido */
+    text-align: center;
+}
+
+.footer-links ul li {
+    margin-bottom: 5px; /* Espacio entre los elementos de la lista */
+    list-style: none;
+}
+
+.footer-links ul li a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.contact-info p,
+.shipping-info p {
+    margin: 5px 0; /* Espacio entre los párrafos */
+    font-size: 14px; /* Tamaño del texto */
+}
+
+.shipping-info img {
+    display: block; /* Aseguramos que la imagen esté centrada */
+    margin: 0 auto 10px; 
+    max-width: 80px;
+}
+/* Estilos para el carrusel de productos */
+.carrusel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: thin; /* Ancho de la scrollbar */
+    scrollbar-color: #7dbeb8 #1e2528;
+    margin-top: 150px;
+}
+
+.carrusel::-webkit-scrollbar {
+    width: 10px; /* Ancho de la scrollbar */
+}
+
+.carrusel::-webkit-scrollbar-track {
+    background: #1e2528; /* Color de fondo de la scrollbar */
+}
+
+.carrusel::-webkit-scrollbar-thumb {
+    background-color: #7dbeb8; /* Color del pulgar de la scrollbar */
+    border-radius: 5px; 
+    border: 2px solid #bf0a0d; /* Borde del pulgar */
+}
+
+/* productos */
+/* Estilos para las cajas de productos */
+.producto {
+    background-color: #ffffff; /* Cambiamos el color de fondo a blanco */
+    border: 2px solid #181619; /* Borde oscuro */
+    border-radius: 8px; /* Bordes redondeados */
+    padding: 15px; /* Espaciado interno */
+    margin-right: 20px; /* Espacio entre las cajas */
+    margin-bottom: 20px; /* Espacio entre las cajas */
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    transition: transform 0.3s; /* Efecto de transición al pasar el mouse */
+}
+
+.producto:hover {
+    transform: translateY(-5px); /* Desplazamiento hacia arriba al pasar el mouse */
+}
+
+/* Estilos para el texto dentro de las cajas de productos */
+.producto h3, .producto p {
+    color: #181619; /* Color de texto oscuro */
+}
+
+.producto img {
+    width: 100%; /* La imagen ocupa todo el espacio disponible */
+    border-radius: 5px; /* Bordes redondeados para la imagen */
+}
+
+.producto button {
+    background-color: #e32f21;
+    color: #ffffff;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
-.gallery-dot.active {
-    background-color: #fff; /* Cambiar el color de fondo del punto activo */
+/* Estilos para la scrollbar del sitio en general */
+body::-webkit-scrollbar {
+    width: 10px; /* Ancho de la scrollbar */
+}
+
+body::-webkit-scrollbar-track {
+    background: #1e2528; /* Color de fondo de la scrollbar */
+}
+
+body::-webkit-scrollbar-thumb {
+    background-color: #7dbeb8; /* Color del pulgar de la scrollbar */
+    border-radius: 5px; /* Bordes redondeados */
+}
+
+/* Estilos para la sección de suscripción */
+#suscripcion {
+    background-color: #ffffff; /* Color de fondo */
+    padding: 40px 0;
+    max-width: 100%;
+    margin-top: 100px;
+}
+
+#suscripcion h2 {
+    text-align: center;
+    color: #181619; /* Color del texto */
+    margin-bottom: 40px;
+}
+
+.suscripcion-items {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.suscripcion-item {
+    text-align: center;
+    padding: 20px;
+    border: 2px solid #e32f21; /* Borde rojo */
+    border-radius: 12px;
+    background-color: #181619; /* Fondo blanco */
+    margin: 20px;
+    width: 40%;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.suscripcion-item img {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.suscripcion-item:hover {
+    transform: translateY(-5px);
+}
+
+.suscripcion-item h3 {
+    margin-top: 20px;
+    color: #ffffff; /* Color del texto */
+}
+
+.suscripcion-item button {
+    background-color: #e32f21; /* Color de fondo */
+    color: #ffffff; /* Color del texto */
+    border: none;
+    padding: 8px 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.suscripcion-item button:hover {
+    background-color: #7dbeb8; /* Cambio de color al pasar el ratón */
 }

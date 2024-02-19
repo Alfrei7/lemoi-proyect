@@ -3,128 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lemoi Indumentarias</title>
-    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <title>Header y Carrito</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <header>
         <div class="container">
-            <h1>Lemoi Indumentaria</h1>
+            <div class="logo">
+                <img src="images/lemoi-logo.png" alt="Logo">
+            </div>
             <nav>
                 <ul>
-                    <li><a href="#">Productos</a>
-                        <ul>
-                            <li><a href="#">Remeras</a></li>
-                            <li><a href="#">Pantalones</a></li>
-                            <li><a href="#">Medias</a></li>
-                            <li><a href="#">Abrigos</a></li>
-                        </ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Productos</a>
+                        <div class="dropdown-content">
+                            <a href="#">Remeras</a>
+                            <a href="#">Pantalones</a>
+                            <a href="#">Abrigos</a>
+                            <a href="#">Accesorios</a>
+                        </div>
                     </li>
-                    <li><a href="#">Quiénes Somos</a></li>
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
+           
+            <div id="carrito">
+                <!-- Ícono del carrito -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24">
+                    <path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm9.805-16.5l-3.432 12h-2.102l2.541-9h-5.993c.115.482.181.983.181 1.5 0 3.59-2.91 6.5-6.5 6.5-.407 0-.805-.042-1.191-.114l1.306 3.114h13.239l3.474-12h1.929l.743-2h-4.195zm-6.305 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm-9-15c-2.486 0-4.5 2.015-4.5 4.5s2.014 4.5 4.5 4.5c2.484 0 4.5-2.015 4.5-4.5s-2.016-4.5-4.5-4.5zm-.469 6.484l-1.687-1.636.695-.697.992.94 2.115-2.169.697.696-2.812 2.866z"/>
+                </svg>
+                <!-- Contenido del carrito -->
+                <div id="carrito-dropdown">
+                    <!-- Aquí va el contenido del carrito (productos, subtotal, etc.) -->
+                </div>
+            </div>
         </div>
     </header>
-    
-    <div class="sidebar">
-        <h2>Categorías</h2>
-        <ul>
-            <li><a href="#">Hombres</a></li>
-            <li><a href="#">Mujeres</a></li>
-            <li><a href="#">Niños</a></li>
-        </ul>
-    </div>
-    
-    <button class="toggle-btn" onclick="toggleSidebar()">&#9776;</button>
-    
-    <main class="product-section">
-        <div class="container">
-            <div class="product-box product-box-1">
-                <div class="product-images">
-                    <img src="images/remera-adidas1.jpg" alt="Remeras">
-                    <img src="images/remera-nike1.jpg" alt="Remeras">
+    <main>
+        <main>
+            <section id="destacados">
+                <!-- Carrusel de productos destacados -->
+                <h2>Productos Destacados</h2>
+                <div class="carrusel">
+                    <!-- Producto 1 -->
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/bermudaNike1.jpg" alt="Producto 1">
+                        <h3>Producto 1</h3>
+                        <p>Precio: $XX</p>
+                        
+                    </div>
+                    <!-- Producto 2 -->
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/bermudaUnder1.jpg" alt="Producto 2">
+                        <h3>Producto 2</h3>
+                        <p>Precio: $XX</p>
+                       
+                    </div>
+                    <!-- Producto 3 -->
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/joggin-nike.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                       
+                    </div>
+                    
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/joggin-nike2.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                        
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/remera-adidas1.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                       
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/remera-nike1.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/remeraAdidas1.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                        
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/remeraAdidas2.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                        
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/rompevientosNike.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                        
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/rompevientosNike2.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                        
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/shortnikeMujer.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                        
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/shortnikeMujer2.jpg" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                        
+                    </div>
+
+                    <div class="producto">
+                        <a href="detalle_producto.html"></a>
+                        <img src="images/" alt="Producto 3">
+                        <h3>Producto 3</h3>
+                        <p>Precio: $XX</p>
+                       
+                    </div>
                 </div>
-                <div class="product-gallery">
-                    <button class="gallery-prev">&#10094;</button>
-                    <button class="gallery-next">&#10095;</button>
-                    <div class="gallery-dots"></div>
-                </div>
+            </section>
 
-                <h3>Remeras básicas Adidas / Nike</h3>
-                <p>Precio: $XX.XX</p>
-            </div>
 
-            <div class="product-box product-box-2">
-                <img src="images/remeraAdidas1.jpg" alt="Remeras">
-                <img src="images/remeraAdidas2.jpg" alt="Remeras">
-                <div class="product-gallery">
-                    <button class="gallery-prev">&#10094;</button>
-                    <button class="gallery-next">&#10095;</button>
-                    <div class="gallery-dots"></div>
-                </div>
-
-                <h3>Remeras Adidas</h3>
-                <p>Precio: $XX.XX</p>
-            </div>
-
-            <div class="product-box product-box-3">
-                <img src="images/bermudaNike1.jpg" alt="Producto 1">
-                <img src="images/bermudaUnder1.jpg" alt="Producto 1">
-                <div class="product-gallery">
-                    <button class="gallery-prev">&#10094;</button>
-                    <button class="gallery-next">&#10095;</button>
-                    <div class="gallery-dots"></div>
-                </div>
-
-                <h3>Bermudas Nike / Under Armour</h3>
-                <p>Precio: $XX.XX</p>
-            </div>
-
-            <div class="product-box product-box-4">
-                <img src="images/joggin-nike.jpg" alt="Producto 1">
-                <img src="images/joggin-nike2.jpg" alt="Producto 1">
-                <div class="product-gallery">
-                    <button class="gallery-prev">&#10094;</button>
-                    <button class="gallery-next">&#10095;</button>
-                    <div class="gallery-dots"></div>
-                </div>
-
-                <h3>Joggin Nike</h3>
-                <p>Precio: $XX.XX</p>
-            </div>
-
-            <div class="product-box product-box-5">
-                <img src="images/rompevientosNike.jpg" alt="Producto 1">
-                <img src="images/rompevientosNike2.jpg" alt="Producto 1">
-                <div class="product-gallery">
-                    <button class="gallery-prev">&#10094;</button>
-                    <button class="gallery-next">&#10095;</button>
-                    <div class="gallery-dots"></div>
-                </div>
-
-                <h3>Rompevientos Nike</h3>
-                <p>Precio: $XX.XX</p>
-            </div>
-
-            <div class="product-box product-box-6">
-                <img src="images/shortnikeMujer.jpg" alt="Producto 1">
-                <img src="images/shortnikeMujer2.jpg" alt="Producto 1">
-                <div class="product-gallery">
-                    <button class="gallery-prev">&#10094;</button>
-                    <button class="gallery-next">&#10095;</button>
-                    <div class="gallery-dots"></div>
-                </div>
-
-                <h3>Short Nike Mujer</h3>
-                <p>Precio: $XX.XX</p>
-            </div>
-
-            <!-- Repetir este bloque para los demás productos -->
+            <section id="suscripcion">
+    <h2> Tipos de prendas</h2>
+    <div class="suscripcion-items">
+        <div class="suscripcion-item">
+            <img src="images/remeraAdidas1.jpg" alt="Camisetas">
+            <h3>Remeras</h3>
+            <button>Ver remeras</button>
         </div>
+        <div class="suscripcion-item">
+            <img src="images/jogguinAdidas1.jpg" alt="Pantalones">
+            <h3>Pantalones</h3>
+            <button>Ver pantalones</button>
+        </div>
+        <div class="suscripcion-item">
+            <img src="images/buzoJordan1.jpg" alt="Abrigos">
+            <h3>Abrigos</h3>
+            <button>Ver abrigos</button>
+        </div>
+        <div class="suscripcion-item">
+            <img src="images/gorrasNba.jpg" alt="Chaquetas">
+            <h3>Accesorios</h3>
+            <button>Ver accesorios</button>
+        </div>
+    </div>
+</section>
+
     </main>
 
+    <footer>
+        <div class="container-footer">
+            <div class="footer-logo">
+                <img src="images/lemoi-logo.png" alt="Logo de la tienda">
+            </div>
+            <div class="footer-links">
+                <h3>Enlaces</h3>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Productos</a></li>
+                    <li><a href="#">Suscripción</a></li>
+                    <li><a href="#">Quiénes somos</a></li>
+                    <!-- Agrega más enlaces si es necesario -->
+                </ul>
+            </div>
+        </div>
+        <div class="container-footer">
+            <div class="contact-info">
+                <h3>Información de contacto</h3>
+                <p>Teléfono: 123-456-789</p>
+                <p>Email: info@example.com</p>
+                <!-- Agrega más información de contacto si es necesario -->
+            </div>
+        </div>
+        <div class="container-footer">
+            <div class="shipping-info">
+                <p>Envío a cargo de:</p>
+                <img src="images/andreaniLogo.png" alt="Logo de la compañía de envíos">
+            </div>
+        </div>
+    </footer>
     <script src="scripts.js"></script>
 </body>
 </html>
