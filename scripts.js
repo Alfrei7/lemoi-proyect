@@ -74,3 +74,4 @@ document.addEventListener('DOMContentLoaded', function() {
     const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
     mostrarCarrito(carritoGuardado);
 });
+

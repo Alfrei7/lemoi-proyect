@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Venta de Remeras</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <link rel="stylesheet" href="stylesSections.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <img src="/images/lemoi-logo.png" alt="Logo">
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="/index.html">Inicio</a></li>
+                    <li class="dropdown">
+                        <a href="#" class="dropbtn">Productos</a>
+                        <div class="dropdown-content">
+                            <a href="pages/remeras.html">Remeras</a>
+                            <a href="pages/pantalones.html">Pantalones</a>
+                            <a href="pages/abrigos.html">Abrigos</a>
+                            <a href="pages/accesorios.html">Accesorios</a>
+                        </div>
+                    </li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <div id="carrito">
+                <!-- Ícono del carrito -->
+                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" id="carrito-icono">
+                    <path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm9.805-16.5l-3.432 12h-2.102l2.541-9h-5.993c.115.482.181.983.181 1.5 0 3.59-2.91 6.5-6.5 6.5-.407 0-.805-.042-1.191-.114l1.306 3.114h13.239l3.474-12h1.929l.743-2h-4.195zm-6.305 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm-9-15c-2.486 0-4.5 2.015-4.5 4.5s2.014 4.5 4.5 4.5c2.484 0 4.5-2.015 4.5-4.5s-2.016-4.5-4.5-4.5zm-.469 6.484l-1.687-1.636.695-.697.992.94 2.115-2.169.697.696-2.812 2.866z"/>
+                </svg>
+                <!-- Contenido del carrito -->
+                <div id="carrito-dropdown">
+                    <!-- Aquí va el contenido del carrito (productos, subtotal, etc.) -->
+                </div>
+            </div>
+        </div>
+    </header>
+
+
+    <div class="container">
+      <div class="row">
+      <section id="hombres">
+          <h2>Remeras para Hombres</h2>
+          <div class="products" id="hombres-products">
+              <!-- Carta de producto 1 -->
+              <div class="product-card">
+                  <div class="product-images">
+                      <!-- Carrusel de imágenes -->
+                      <div class="carousel">
+                          <img src="media/musculosaVans1.jpg" alt="Remera 1">
+                          <img src="media/musculosaVans2.jpg" alt="Remera 1">
+                          <!-- Agrega más imágenes si es necesario -->
+                      </div>
+                  </div>
+                  <div class="product-info">
+                      <h3>Remera para Hombre 1</h3>
+                      <p>Precio: $XX.XX</p>
+                      <!-- Botones de acción -->
+                      <button class="btn add-to-cart">Agregar al carrito</button>
+                      <button class="btn view-details">Ver detalles</button>
+                  </div>
+              </div>
+
+              <div class="product-card">
+                <div class="product-images">
+                    <!-- Carrusel de imágenes -->
+                    <div class="carousel">
+                        <img src="imagen1.jpg" alt="Remera 1">
+                        <img src="imagen2.jpg" alt="Remera 1">
+                        <!-- Agrega más imágenes si es necesario -->
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Remera para Hombre 1</h3>
+                    <p>Precio: $XX.XX</p>
+                    <!-- Botones de acción -->
+                    <button class="btn add-to-cart">Agregar al carrito</button>
+                    <button class="btn view-details">Ver detalles</button>
+                </div>
+            </div>
+
+            <div class="product-card">
+              <div class="product-images">
+                  <!-- Carrusel de imágenes -->
+                  <div class="carousel">
+                      <img src="imagen1.jpg" alt="Remera 1">
+                      <img src="imagen2.jpg" alt="Remera 1">
+                      <!-- Agrega más imágenes si es necesario -->
+                  </div>
+              </div>
+              <div class="product-info">
+                  <h3>Remera para Hombre 1</h3>
+                  <p>Precio: $XX.XX</p>
+                  <!-- Botones de acción -->
+                  <button class="btn add-to-cart">Agregar al carrito</button>
+                  <button class="btn view-details">Ver detalles</button>
+              </div>
+          </div>
+
+          <div class="product-card">
+            <div class="product-images">
+                <!-- Carrusel de imágenes -->
+                <div class="carousel">
+                    <img src="imagen1.jpg" alt="Remera 1">
+                    <img src="imagen2.jpg" alt="Remera 1">
+                    <!-- Agrega más imágenes si es necesario -->
+                </div>
+            </div>
+            <div class="product-info">
+                <h3>Remera para Hombre 1</h3>
+                <p>Precio: $XX.XX</p>
+                <!-- Botones de acción -->
+                <button class="btn add-to-cart">Agregar al carrito</button>
+                <button class="btn view-details">Ver detalles</button>
+            </div>
+        </div>
+              <!-- Repite esta estructura para más productos si es necesario -->
+          </div>
+      </section>
+
+      <hr>
+      <section id="mujeres">
+        <h2>Mujeres</h2>
+        <div class="products" id="mujeres-products">
+            <!-- Carta de producto 1 -->
+            <div class="product-card">
+                <div class="product-images">
+                    <!-- Carrusel de imágenes -->
+                    <div class="carousel">
+                        <img src="media/remera-adidas1.jpg" alt="Remera 1">
+                        <img src="media/remera-nike1.jpg" alt="Remera 1">
+                        <!-- Agrega más imágenes si es necesario -->
+                    </div>
+                </div>
+                <div class="product-info">
+                    <h3>Remera para Hombre 1</h3>
+                    <p>Precio: $XX.XX</p>
+                    <!-- Botones de acción -->
+                    <button class="btn add-to-cart">Agregar al carrito</button>
+                    <button class="btn view-details">Ver detalles</button>
+                </div>
+            </div>
+            <!-- Repite esta estructura para más productos si es necesario -->
+        </div>
+    </section>
+
+    <hr>
+    <section id="Niños">
+      <h2>Niños</h2>
+      <div class="products" id="niños-products">
+          <!-- Carta de producto 1 -->
+          <div class="product-card">
+              <div class="product-images">
+                  <!-- Carrusel de imágenes -->
+                  <div class="carousel">
+                      <img src="imagen1.jpg" alt="Remera 1">
+                      <img src="imagen2.jpg" alt="Remera 1">
+                      <!-- Agrega más imágenes si es necesario -->
+                  </div>
+              </div>
+              <div class="product-info">
+                  <h3>Remera para Hombre 1</h3>
+                  <p>Precio: $XX.XX</p>
+                  <!-- Botones de acción -->
+                  <button class="btn add-to-cart">Agregar al carrito</button>
+                  <button class="btn view-details">Ver detalles</button>
+              </div>
+          </div>
+          <!-- Repite esta estructura para más productos si es necesario -->
+      </div>
+    
+  </section>
+  </div>
+</div>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="scriptsPages.js"></script>
+</body>
+</html>

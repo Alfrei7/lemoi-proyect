@@ -13,7 +13,7 @@ header {
     top: 0;
     z-index: 1000;
     border-radius: 15px;
-    position: fixed; /* Fijar el header en la parte superior */
+    position: top; /* Fijar el header en la parte superior */
 }
 
 .container {
@@ -196,64 +196,58 @@ main {
 }
 
 footer {
-    background-color: #1e2528;
-    color: #ffffff;
+    background-color: #f8f9fa;
     padding: 20px 0;
-    font-family: Arial, sans-serif; /* Fuente del texto */
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.footer-container {
-    display: flex;
-    justify-content: center; /* Centramos los elementos horizontalmente */
-    align-items: center;
+.container-footer {
     max-width: 1200px;
-    margin: 0 auto; /* Centramos horizontalmente */
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex: 1;
+    margin: 0 10px;
+    color: #1e2528;
 }
 
 .footer-logo img {
-    max-width: 100px; /* Tamaño máximo del logo */
-    display: block; /* Aseguramos que el logo se centre correctamente */
-    margin: 0 auto; /* Centramos horizontalmente */
+    width: 100px;
+    height: auto;
+    margin-right: 10px;
 }
 
-.footer-links ul,
-.contact-info,
-.shipping-info {
-    flex-basis: calc(33.33% - 20px); /* Ancho de las secciones */
-    margin-bottom: 20px; /* Espacio entre las secciones */
-    text-align: center; /* Centramos el contenido */
-    padding-left: 0; 
-    text-align: center;
-}
-
-.footer-links h3,
-.contact-info h3,
-.shipping-info h3 {
-    margin-bottom: 10px; /* Espacio entre el título y el contenido */
-    text-align: center;
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-right: 40px;
 }
 
 .footer-links ul li {
-    margin-bottom: 5px; /* Espacio entre los elementos de la lista */
-    list-style: none;
+    margin-bottom: 10px;
+
 }
 
 .footer-links ul li a {
-    color: #ffffff;
     text-decoration: none;
+    color: #333;
 }
 
 .contact-info p,
 .shipping-info p {
-    margin: 5px 0; /* Espacio entre los párrafos */
-    font-size: 14px; /* Tamaño del texto */
+    margin-bottom: 5px;
+    margin-right: 10px;
+    color: #1e2528;
 }
 
 .shipping-info img {
-    display: block; /* Aseguramos que la imagen esté centrada */
-    margin: 0 auto 10px; 
-    max-width: 80px;
+    max-width: 120px;
 }
+
 /* Estilos para el carrusel de productos */
 .carrusel {
     display: flex;
