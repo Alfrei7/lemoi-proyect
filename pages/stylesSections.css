@@ -10,6 +10,7 @@ body {
 }
 
 header {
+    display: flex;
     background-color: #ffffff; /* Color de fondo del header */
     padding: 10px 0;
     width: 100%;
@@ -19,22 +20,20 @@ header {
     position: top; /* Fijar el header en la parte superior */
 }
 
-.container {
+.container-header {
+    display: flex;
+    align-items: center;
         width: 100%;
         max-width: 1200px; /* Ajusta el ancho máximo según sea necesario */
         margin: 0 auto; /* Centra el contenedor en la página */
       }
       
-      .row {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: space-between; /* Ajusta el espacio entre las secciones */
-        margin-bottom: 30px; /* Espacio entre las filas */
-      }
-
+      
 .logo img {
+    padding-right: 50px;
     max-width: 100px;
     margin-top: 10px; /* Ajustar el margen superior del logo */
+    margin: auto;
 }
 
 nav ul {
@@ -58,6 +57,7 @@ nav ul li a {
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s;
+
 }
 
 nav ul li a:hover {
@@ -91,8 +91,11 @@ nav ul li a.btn:hover {
 
 /* Estilos para el carrito */
 #carrito {
-    position: relative;
+    position: right;
     cursor: pointer;
+    margin-left: auto;
+    margin-right: 20px;
+
 }
 
 #carrito-icono {
@@ -210,134 +213,95 @@ nav ul li a.btn:hover {
 }
 
 /* Estilo para el contenido principal */
-main {
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
     padding: 20px;
 }
 
-/* Estilos para el footer */
-footer {
-    background-color: #f8f9fa;
-    padding: 20px 0;
+.row {
     display: flex;
     flex-wrap: wrap;
-}
-
-.container-footer {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    display: flex;
     justify-content: space-between;
-    align-items: center;
-    flex: 1;
-    margin: 0 10px;
-    color: #1e2528;
+    margin-bottom: 20px;
 }
 
-.footer-logo img {
-    width: 100px;
-    height: auto;
-    margin-right: 10px;
+.product {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #f9f9f9; /* Cambiamos el color de fondo */
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
 }
 
-.footer-links ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    margin-right: 40px;
+.product:nth-child(odd) {
+    background-color: #eaeaea; /* Cambiamos el color de fondo para los productos impares */
 }
 
-.footer-links ul li {
+.carousel {
+    position: relative;
+    max-width: 100%;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
     margin-bottom: 10px;
 }
 
-.footer-links ul li a {
-    text-decoration: none;
-    color: #333;
+.carousel img {
+    width: 100% auto;
+    height: 100% auto;    
+    display: block;
+    margin: 0 auto;
 }
 
-.contact-info p,
-.shipping-info p {
-    margin-bottom: 5px;
-    margin-right: 10px;
-    color: #1e2528;
+.prev,
+.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 24px;
+    color: #000;
+    cursor: pointer;
 }
 
-.shipping-info img {
-    max-width: 120px;
+.prev {
+    left: 10px;
 }
 
-/* Estilos para las secciones */
+.next {
+    right: 10px;
+}
+
+h3 {
+    margin-bottom: 10px;
+    color: #000;
+}
+
+p {
+color: #000;
+}
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
 
 section {
-    width: calc(33.33% - 10px); /* Ancho de cada sección (33.33% para tres columnas) */
-    margin-bottom: 30px; /* Espacio entre secciones */
-  }
-h2 {
-    color: #ffffff;
-    text-align: center;
+    border-bottom: 1px solid #ccc; /* Agregar una línea en la parte inferior de cada sección */
+    padding-bottom: 20px; /* Espacio entre la línea y el contenido de la sección */
 }
-
-hr {
-    border: none;
-    border-top: 1px solid #ffffff;
-    margin: 20px auto;
-}
-
-/* Estilo para la lista de productos */
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-}
-
-/* Estilo para cada carta de producto */
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between; /* Ajusta el espacio entre las cajas de productos */
-  }
-  
-  .product-box {
-    width: calc(33.33% - 10px); /* Ancho de cada caja de producto (33.33% para tres columnas) */
-    margin-bottom: 20px; /* Espacio entre las cajas de productos */
-  }
-
-/* Estilo para cada carta de producto */
-.product-card {
-    width: calc(33.33% - 20px); /* Ancho de cada carta (1/3 del contenedor) con espacio entre ellas */
-    margin-bottom: 20px; /* Espacio entre cartas */
-    box-sizing: border-box;
-    border: 1px solid #ddd; /* Borde de la carta */
-    padding: 20px; /* Espaciado interno */
-}
-
-/* Estilo para las imágenes de los productos */
-.product-images {
-    margin-bottom: 15px; /* Espacio entre imágenes y la información del producto */
-}
-
-/* Estilo para la información del producto */
-.product-info {
-    text-align: center; /* Alineación del texto */
-}
-
-/* Estilo para los botones de acción */
-.btn {
-    background-color: #007bff; /* Color de fondo */
-    color: #fff; /* Color del texto */
-    padding: 8px 16px; /* Espaciado interno */
-    border: none; /* Sin borde */
-    cursor: pointer; /* Cursor de ratón */
-    margin-right: 10px; /* Espacio entre botones */
-}
-
-/* Estilo para el carrusel de imágenes */
-.carousel {
-    max-width: 100%; /* Ancho máximo */
-    overflow: hidden; /* Oculta las partes de las imágenes que se desbordan */
-}
-
-.carousel img {
-    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+h1 {
+    text-align: center; /* Centrar el texto */
+    margin-bottom: 20px; /* Espacio debajo del encabezado */
 }

@@ -1,143 +1,100 @@
+// Función para abrir y cerrar el contenido del carrito
+function toggleCarrito() {
+    var dropdown = document.getElementById("carrito-dropdown");
+    dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+}
+
+// Agregar un listener de evento para abrir y cerrar el carrito al hacer clic en el ícono del carrito
+document.getElementById("carrito").addEventListener("click", function(event) {
+    toggleCarrito();
+    event.stopPropagation(); // Evitar que se cierre el carrito al hacer clic en él
+});
+
+// Agregar un listener de evento para cerrar el carrito al hacer clic fuera de él
+document.addEventListener("click", function(event) {
+    var dropdown = document.getElementById("carrito-dropdown");
+    if (event.target !== dropdown && !dropdown.contains(event.target)) {
+        dropdown.style.display = "none";
+    }
+});
+
+// Lista de productos
+const productos = [
+    { id: 1, nombre: 'Camiseta', precio: 20, imagen: 'camiseta.jpg' },
+    { id: 2, nombre: 'Pantalón', precio: 30, imagen: 'pantalon.jpg' },
+    // Agrega más productos según sea necesario
+];
+
+// Función para agregar un producto al carrito
+function agregarAlCarrito(id) {
+    // Obtener el producto seleccionado por su ID (puedes obtenerlos de una lista o base de datos)
+    const producto = obtenerProductoPorId(id);
+    
+    // Obtener el carrito del almacenamiento local del navegador
+    let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+
+    // Verificar si el producto ya está en el carrito
+    const productoExistente = carrito.find(item => item.id === producto.id);
+    if (productoExistente) {
+        // Incrementar la cantidad si el producto ya está en el carrito
+        productoExistente.cantidad++;
+    } else {
+        // Agregar el producto al carrito con una cantidad de 1
+        carrito.push({ ...producto, cantidad: 1 });
+    }
+
+    // Guardar el carrito actualizado en el almacenamiento local del navegador
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+
+    // Mostrar el carrito actualizado
+    mostrarCarrito(carrito);
+}
+
+// Función para mostrar el carrito
+function mostrarCarrito(carrito) {
+    const carritoElemento = document.getElementById('carrito-dropdown');
+    carritoElemento.innerHTML = ''; // Limpiar el contenido anterior del carrito
+
+    // Recorrer todos los productos en el carrito y crear un elemento para cada uno
+    carrito.forEach(producto => {
+        const productoElemento = document.createElement('div');
+        productoElemento.innerHTML = `
+            <img src="${producto.imagen}" alt="${producto.nombre}" class="imagen-producto">
+            <div>
+                <p>${producto.nombre}</p>
+                <p>Cantidad: ${producto.cantidad}</p>
+            </div>
+        `;
+        carritoElemento.appendChild(productoElemento);
+    });
+}
+
+// Llamar a la función mostrarCarrito al cargar la página para mostrar los productos guardados
+document.addEventListener('DOMContentLoaded', function() {
+    const carritoGuardado = JSON.parse(localStorage.getItem('carrito')) || [];
+    mostrarCarrito(carritoGuardado);
+});
+
+
 document.addEventListener("DOMContentLoaded", function() {
-    var carritoDropdown = document.getElementById('carrito-dropdown');
-    var carritoIcono = document.getElementById('carrito-icono');
-    var total = 0;
+    const prevButtons = document.querySelectorAll(".prev");
+    const nextButtons = document.querySelectorAll(".next");
 
-    // Función para mostrar/ocultar el contenido del carrito
-    function toggleCarritoDropdown() {
-        carritoDropdown.classList.toggle('mostrar');
-    }
-
-    // Agregar evento de clic al icono del carrito para mostrar/ocultar el contenido
-    carritoIcono.addEventListener('click', toggleCarritoDropdown);
-
-    // Función para agregar un producto al carrito
-    function agregarAlCarrito(producto) {
-        var existeProducto = false;
-
-        var cartItems = carritoDropdown.querySelectorAll('.cart-item');
-        cartItems.forEach(function(item) {
-            var nombreProducto = item.querySelector('span').textContent;
-            if (nombreProducto === producto.name) {
-                existeProducto = true;
-                var cantidadElement = item.querySelector('.cantidad');
-                var cantidad = parseInt(cantidadElement.textContent);
-                cantidad++;
-                cantidadElement.textContent = cantidad;
-                total += producto.price;
-            }
+    prevButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const carousel = button.parentElement;
+            const images = carousel.querySelectorAll("img");
+            const lastImage = images[images.length - 1];
+            carousel.insertBefore(lastImage, images[0]);
         });
+    });
 
-        if (!existeProducto) {
-            var cartItem = document.createElement('div');
-            cartItem.classList.add('cart-item');
-            cartItem.innerHTML = `
-                <div>
-                    <img src="${producto.image}" alt="Product Image">
-                    <span>${producto.name}</span>
-                </div>
-                <span class="cantidad">1</span>
-                <button class="eliminar-producto">×</button>
-            `;
-            carritoDropdown.appendChild(cartItem);
-            total += producto.price;
-        }
-
-        actualizarTotal();
-    }
-
-    // Ejemplo de cómo agregar un producto al carrito cuando se hace clic en el botón "Agregar al carrito"
-var addToCartButtons = document.querySelectorAll('.btn-add-to-cart');
-addToCartButtons.forEach(function(button) {
-    button.addEventListener('click', function(event) {
-        var productBox = event.target.closest('.product-box');
-        var productId = productBox.getAttribute('data-product-id');
-        var productName = productBox.querySelector('.product-details h3').textContent;
-        var productImageSrc = productBox.querySelector('.carousel img').getAttribute('src');
-        var productPrice = parseFloat(productBox.querySelector('.product-details p').textContent.substr(1)); // Obtener precio como número
-        agregarAlCarrito({ id: productId, name: productName, image: productImageSrc, price: productPrice });
-        animateCart();
+    nextButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const carousel = button.parentElement;
+            const images = carousel.querySelectorAll("img");
+            const firstImage = images[0];
+            carousel.appendChild(firstImage);
+        });
     });
 });
-
-
-    // Función para eliminar un producto del carrito
-    function eliminarProducto(event) {
-        var cartItem = event.target.closest('.cart-item');
-        var cantidadElement = cartItem.querySelector('.cantidad');
-        var cantidad = parseInt(cantidadElement.textContent);
-        if (cantidad > 1) {
-            cantidad--;
-            cantidadElement.textContent = cantidad;
-        } else {
-            cartItem.remove();
-        }
-        var nombreProducto = cartItem.querySelector('span').textContent;
-        var productBox = document.querySelector('.product-box .product-details h3');
-        if (nombreProducto === productBox.textContent) {
-            total -= parseFloat(productBox.nextElementSibling.textContent.substr(1));
-        }
-        actualizarTotal();
-    }
-
-    // Agregar evento de clic a todos los botones de eliminar producto
-    document.addEventListener('click', function(event) {
-        if (event.target.classList.contains('eliminar-producto')) {
-            eliminarProducto(event);
-        }
-    });
-
-    // Función para actualizar el precio total
-    function actualizarTotal() {
-        var totalElement = document.getElementById('total');
-        totalElement.textContent = '$' + total.toFixed(2);
-    }
-
-    // Función para animar el carrito al agregar productos
-    function animateCart() {
-        carritoIcono.classList.add('animacion-carrito');
-        setTimeout(function() {
-            carritoIcono.classList.remove('animacion-carrito');
-        }, 300);
-    }
-});
- // Datos de ejemplo (puedes sustituirlos por tus propios datos)
-const productsData = [
-    { category: 'hombres', name: 'Remera para Hombre 1', price: '$20', images: ['image1.jpg', 'image2.jpg'] },
-    { category: 'mujeres', name: 'Remera para Mujer 1', price: '$25', images: ['image3.jpg', 'image4.jpg'] },
-    { category: 'ninos', name: 'Remera para Niño 1', price: '$15', images: ['image5.jpg', 'image6.jpg'] }
-  ];
-  
-  // Función para generar las cajas de productos
-  function generateProductBoxes(products) {
-    const container = document.getElementById(`${products[0].category}-products`);
-    products.forEach(product => {
-      const productBox = document.createElement('div');
-      productBox.classList.add('product-box');
-      productBox.innerHTML = `
-        <div id="${product.name}" class="carousel slide" data-ride="carousel">
-          <div class="carousel-inner">
-            ${product.images.map((image, index) => `
-              <div class="carousel-item ${index === 0 ? 'active' : ''}">
-                <img src="${image}" class="d-block w-100" alt="${product.name}">
-              </div>
-            `).join('')}
-          </div>
-          <a class="carousel-control-prev" href="#${product.name}" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-          </a>
-          <a class="carousel-control-next" href="#${product.name}" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-          </a>
-        </div>
-        <h3>${product.name}</h3>
-        <p>${product.price}</p>
-      `;
-      container.appendChild(productBox);
-    });
-  }
-  
-  // Llamada a la función para generar las cajas de productos
-  generateProductBoxes(productsData);
