@@ -91,11 +91,10 @@ nav ul li a.btn:hover {
 
 /* Estilos para el carrito */
 #carrito {
-    position: right;
+    position: relative;
     cursor: pointer;
     margin-left: auto;
     margin-right: 20px;
-
 }
 
 #carrito-icono {
@@ -122,17 +121,22 @@ nav ul li a.btn:hover {
     display: block;
 }
 
-.cart-item {
+.carrito-item {
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin-bottom: 10px;
 }
 
-.cart-item img {
+.carrito-item img {
     width: 50px;
     height: 50px;
     margin-right: 10px;
+}
+
+.carrito-item .producto-info {
+    flex: 1; /* Ocupa el espacio disponible */
 }
 
 .eliminar-producto {
@@ -227,45 +231,43 @@ nav ul li a.btn:hover {
 }
 
 .product {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin: 10px;
     width: calc(33.33% - 20px);
-    margin-bottom: 20px;
-    text-align: center;
-    border: 1px solid #ccc;
-    padding: 10px;
-    box-sizing: border-box;
-    background-color: #f9f9f9; /* Cambiamos el color de fondo */
-    border-radius: 5px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.product:nth-child(odd) {
-    background-color: #eaeaea; /* Cambiamos el color de fondo para los productos impares */
+    float: left;
 }
 
 .carousel {
     position: relative;
-    max-width: 100%;
-    width: 100%;
-    height: 200px;
     overflow: hidden;
-    margin-bottom: 10px;
+    width: 100%;
+    max-width: 300px; /* Ajusta el ancho máximo del carrusel según tus necesidades */
+    margin: 0 auto;
 }
 
-.carousel img {
-    width: 100% auto;
-    height: 100% auto;    
-    display: block;
-    margin: 0 auto;
+.slides {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slide {
+    width: 100%;
+    display: inline-block;
 }
 
 .prev,
 .next {
+    cursor: pointer;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 24px;
-    color: #000;
-    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+    outline: none;
 }
 
 .prev {
@@ -275,26 +277,40 @@ nav ul li a.btn:hover {
 .next {
     right: 10px;
 }
-
-h3 {
+.product h3 {
+    font-size: 18px;
     margin-bottom: 10px;
-    color: #000;
+    padding-top: 5px;
+    color: #14181b;
+    text-align: center;
 }
 
-p {
-color: #000;
+.product p {
+    margin-bottom: 10px;
+    color: #14181b;
+    text-align: center;
 }
-button {
-    padding: 10px 20px;
-    margin: 5px;
-    background-color: #007bff;
-    color: #fff;
+
+.add-to-cart,
+.view-more {
+    background-color: #1e2528;
+    color: #ffffff;
     border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
     cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 5px;
+    align-items: center;
 }
 
-button:hover {
-    background-color: #0056b3;
+.view-more{
+    margin-left: 5px;
+}
+
+.add-to-cart:hover,
+.view-more:hover {
+    background-color: #14181b;
 }
 
 section {

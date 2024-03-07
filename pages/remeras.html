@@ -28,6 +28,7 @@
                     <li><a href="#">Contacto</a></li>
                 </ul>
             </nav>
+         
             <div id="carrito">
                 <!-- Ícono del carrito -->
                 <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" id="carrito-icono">
@@ -36,287 +37,330 @@
                 <!-- Contenido del carrito -->
                 <div id="carrito-dropdown">
                     <!-- Aquí va el contenido del carrito (productos, subtotal, etc.) -->
+                    <!-- Mostrar la cantidad de productos en el carrito -->
+                    <p id="cantidad-productos">0 productos en el carrito</p>
+                    <!-- Botón Ir a Whatsapp -->
+                    <button id="ir-a-whatsapp">Ir a Whatsapp</button>
                 </div>
             </div>
-        </div>
-    </header>
-
-    <section> 
-        <h1> Hombres </h1>
-    <div class="container">
-        <div class="row">
-            <div class="product">
-                <div class="carousel">
-                    <span class="prev">&lt;</span>
-                    <!-- Aquí van las imágenes del carrusel -->
-                    <img src="/images/remera-adidas1.jpg" alt="Producto 1">
-                    <img src="/images/remera-nike1.jpg" alt="Producto 1">
-                    <span class="next">&gt;</span>
-                </div>
-                <h3>Remeras Adidas / Nike </h3>
-                <p>Precio: $5000</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-                <button class="view-more">Ver Más</button>
-            </div>
-
-            <div class="product">
-                <div class="carousel">
-                    <span class="prev">&lt;</span>
-                    <!-- Aquí van las imágenes del carrusel -->
-                    <img src="/images/remeraAdidas1.jpg" alt="Producto 1">
-                    <img src="/images/remeraAdidas2.jpg" alt="Producto 1">
-                    <span class="next">&gt;</span>
-                </div>
-                <h3>Remeras Adidas </h3>
-                <p>Precio: $5000</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-                <button class="view-more">Ver Más</button>
-            </div>
-
-            <div class="product">
-                <div class="carousel">
-                    <span class="prev">&lt;</span>
-                    <!-- Aquí van las imágenes del carrusel -->
-                    <img src="/images/remeraLacoste1.jpg" alt="Producto 1">
-                    <img src="/images/RemeraNike1.jpg" alt="Producto 1">
-                    <span class="next">&gt;</span>
-                </div>
-                <h3>Remeras Lacoste / Nike</h3>
-                <p>Precio: $5000</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-                <button class="view-more">Ver Más</button>
-            </div>
-            <!-- Repite este div para los otros dos productos -->
-        </div>
-        <div class="row">
-            <div class="product">
-                <div class="carousel">
-                    <span class="prev">&lt;</span>
-                    <!-- Aquí van las imágenes del carrusel -->
-                    <img src="/images/remeraLevis1.jpg" alt="Producto 1">
-                    <img src="/images/remeraLevis2.jpg" alt="Producto 1">
-                    <span class="next">&gt;</span>
-                </div>
-                <h3>Remeras Levi's </h3>
-                <p>Precio: $5000</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-                <button class="view-more">Ver Más</button>
-            </div>
-
-            <div class="product">
-                <div class="carousel">
-                    <span class="prev">&lt;</span>
-                    <!-- Aquí van las imágenes del carrusel -->
-                    <img src="/images/remeraRipCurl1.jpg" alt="Producto 1">
-                    <img src="/images/remeraRipCurl2.jpg" alt="Producto 1">
-                    <span class="next">&gt;</span>
-                </div>
-                <h3>Remeras RipCurl</h3>
-                <p>Precio: $5000</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-                <button class="view-more">Ver Más</button>
-            </div>
-
-            <div class="product">
-                <div class="carousel">
-                    <span class="prev">&lt;</span>
-                    <!-- Aquí van las imágenes del carrusel -->
-                    <img src="media/musculosaVans1.jpg" alt="Producto 1">
-                    <img src="media/musculosaVans2.jpg" alt="Producto 1">
-                    <span class="next">&gt;</span>
-                </div>
-                <h3>Musculosas Vans </h3>
-                <p>Precio: $5000</p>
-                <button class="add-to-cart">Añadir al Carrito</button>
-                <button class="view-more">Ver Más</button>
-            </div>
-
-        </section>
-
-        <hr>
-
+        </header>
+        
         <section>
-            <h1>Mujeres</h1>
+            <h1> Hombres </h1>
             <div class="container">
                 <div class="row">
                     <div class="product">
                         <div class="carousel">
                             <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remera-adidas1.jpg" alt="Producto 1">
-                            <img src="/images/remera-nike1.jpg" alt="Producto 1">
+                            <div class="slides">
+                                <img src="/images/remera-adidas1.jpg" alt="Producto 1" class="slide active">
+                                <img src="/images/remera-nike1.jpg" alt="Producto 1" class="slide">
+                            </div>
                             <span class="next">&gt;</span>
                         </div>
                         <h3>Remeras Adidas / Nike </h3>
                         <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
+                         <button class="add-to-cart" data-product-id="1">Añadir al Carrito</button>
                         <button class="view-more">Ver Más</button>
                     </div>
-        
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remeraAdidas1.jpg" alt="Producto 1">
-                            <img src="/images/remeraAdidas2.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
+    
+                <!-- Repite este div para los otros productos -->
+    
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/remeraAdidas1.jpg" alt="Producto 1" class="slide active">
+                            <img src="/images/remeraAdidas2.jpg" alt="Producto 1" class="slide">
                         </div>
-                        <h3>Remeras Adidas </h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
+                        <span class="next">&gt;</span>
                     </div>
-        
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remeraLacoste1.jpg" alt="Producto 1">
-                            <img src="/images/RemeraNike1.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
-                        </div>
-                        <h3>Remeras Lacoste / Nike</h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
-                    </div>
-                    <!-- Repite este div para los otros dos productos -->
+                    <h3>Remeras Adidas </h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="2">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
                 </div>
-                <div class="row">
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remeraLevis1.jpg" alt="Producto 1">
-                            <img src="/images/remeraLevis2.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
+    
+                <!-- Repite este div para los otros productos -->
+    
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/remeraLacoste1.jpg" alt="Producto 1" class="slide active">
+                            <img src="/images/RemeraNike1.jpg" alt="Producto 1" class="slide">
                         </div>
-                        <h3>Remeras Levi's </h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
+                        <span class="next">&gt;</span>
                     </div>
-        
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remeraRipCurl1.jpg" alt="Producto 1">
-                            <img src="/images/remeraRipCurl2.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
-                        </div>
-                        <h3>Remeras RipCurl</h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
-                    </div>
-        
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="media/musculosaVans1.jpg" alt="Producto 1">
-                            <img src="media/musculosaVans2.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
-                        </div>
-                        <h3>Musculosas Vans </h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
-                    </div>
-        </section>
-<hr>
-        
-        <section>
-            <h1>Niños</h1>
-            <div class="container">
-                <div class="row">
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remera-adidas1.jpg" alt="Producto 1">
-                            <img src="/images/remera-nike1.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
-                        </div>
-                        <h3>Remeras Adidas / Nike </h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
-                    </div>
-        
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remeraAdidas1.jpg" alt="Producto 1">
-                            <img src="/images/remeraAdidas2.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
-                        </div>
-                        <h3>Remeras Adidas </h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
-                    </div>
-        
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remeraLacoste1.jpg" alt="Producto 1">
-                            <img src="/images/RemeraNike1.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
-                        </div>
-                        <h3>Remeras Lacoste / Nike</h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
-                    </div>
-                    <!-- Repite este div para los otros dos productos -->
+                    <h3>Remeras Lacoste / Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="3">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
                 </div>
-                <div class="row">
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remeraLevis1.jpg" alt="Producto 1">
-                            <img src="/images/remeraLevis2.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
+    
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/remeraLacoste1.jpg" alt="Producto 1" class="slide active">
+                            <img src="/images/RemeraNike1.jpg" alt="Producto 1" class="slide">
                         </div>
-                        <h3>Remeras Levi's </h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
+                        <span class="next">&gt;</span>
                     </div>
-        
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="/images/remeraRipCurl1.jpg" alt="Producto 1">
-                            <img src="/images/remeraRipCurl2.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
+                    <h3>Remeras Lacoste / Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="4">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/remeraLevis1.jpg" alt="Producto 1" class="slide active">
+                            <img src="/images/remeraLevis2.jpg" alt="Producto 1" class="slide">
                         </div>
-                        <h3>Remeras RipCurl</h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
+                        <span class="next">&gt;</span>
                     </div>
-        
-                    <div class="product">
-                        <div class="carousel">
-                            <span class="prev">&lt;</span>
-                            <!-- Aquí van las imágenes del carrusel -->
-                            <img src="media/musculosaVans1.jpg" alt="Producto 1">
-                            <img src="media/musculosaVans2.jpg" alt="Producto 1">
-                            <span class="next">&gt;</span>
+                    <h3>Remeras Lacoste / Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="5">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/remeraRipCurl1.jpg" alt="Producto 1" class="slide active">
+                            <img src="/images/remeraRipCurl2.jpg" alt="Producto 1" class="slide">
                         </div>
-                        <h3>Musculosas Vans </h3>
-                        <p>Precio: $5000</p>
-                        <button class="add-to-cart">Añadir al Carrito</button>
-                        <button class="view-more">Ver Más</button>
+                        <span class="next">&gt;</span>
                     </div>
-        </section>
+                    <h3>Remeras Lacoste / Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="6">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="media/musculosaVans1.jpg" alt="Producto 1" class="slide active">
+                            <img src="media/musculosaVans2.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras Lacoste / Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="7">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/" alt="Producto 1" class="slide active">
+                            <img src="/images/RemeraNike1.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras Lacoste / Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="8">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="media/goldenState.jpg" alt="Producto 1" class="slide active">
+                            <img src="media/MiamiHeat.jpg" alt="Producto 1" class="slide">
+                            <img src="media/milwakeBuks.jpg" alt="Producto 1" class="slide">
+                            <img src="media/SanAntonioSpurs.jpg" alt="Producto 1" class="slide">
+                            <img src="media/sacramentoKings.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras NBA</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="9">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+    
+    <!-- Repite este section para los otros grupos de productos -->
+    
+    <section>
+        <h1> Mujeres </h1>
+        <div class="container">
+            <div class="row">
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="media/remerasMarcas.jpg" alt="Producto 1" class="slide active">
+                            <img src="media/remerasMarcas2.jpg" alt="Producto 1" class="slide">
+                            <img src="media/remerasMarcas3.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras Adidas / Nike </h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="10">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+    
+                <!-- Repite este div para los otros productos -->
+    
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="media/remerones-oversizeMujer.jpg" alt="Producto 1" class="slide active">
+                            <img src="media/remerones-oversizeMujer2.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remerones Oversize Adidas </h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="11">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+    
+                <!-- Repite este div para los otros productos -->
+    
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="media/adidasDama.jpg" alt="Producto 1" class="slide active">
+                            <img src="media/radidasDama2.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras Adidas</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="12">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="media/topNike.jpg" alt="Producto 1" class="slide active">
+                            <img src="media/topNike2.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Top Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="13">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="media/deportivasDama.jpg" alt="Producto 1" class="slide active">
+                            <img src="media/deportivasDama2.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="14">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="media/sudaderasMujer.jpg" alt="Producto 1" class="slide active">
+                            <img src="media/sudaderasMujer2.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Sudaderas</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="15">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+    
+                <!-- Repite este div para los otros productos -->
+            </div>
+        </div>
+    </section>
+    <hr>
+    
+    <!-- Repite este section para los otros grupos de productos -->
+    
+    <section>
+        <h1> Niños </h1>
+        <div class="container">
+            <div class="row">
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/remera-adidas1.jpg" alt="Producto 1" class="slide active">
+                            <img src="/images/remera-nike1.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras Adidas / Nike </h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="16">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+    
+                <!-- Repite este div para los otros productos -->
+    
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/remeraAdidas1.jpg" alt="Producto 1" class="slide active">
+                            <img src="/images/remeraAdidas2.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras Adidas </h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="17">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+    
+                <!-- Repite este div para los otros productos -->
+    
+                <div class="product">
+                    <div class="carousel">
+                        <span class="prev">&lt;</span>
+                        <div class="slides">
+                            <img src="/images/remeraLacoste1.jpg" alt="Producto 1" class="slide active">
+                            <img src="/images/RemeraNike1.jpg" alt="Producto 1" class="slide">
+                        </div>
+                        <span class="next">&gt;</span>
+                    </div>
+                    <h3>Remeras Lacoste / Nike</h3>
+                    <p>Precio: $5000</p>
+                     <button class="add-to-cart" data-product-id="18">Añadir al Carrito</button>
+                    <button class="view-more">Ver Más</button>
+                </div>
+    
+                <!-- Repite este div para los otros productos -->
+            </div>
+        </div>
+    </section>
     </div>
   
   
