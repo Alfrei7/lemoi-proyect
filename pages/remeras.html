@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Venta de Remeras</title>
+  <title>Remeras</title>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <link rel="stylesheet" href="stylesSections.css">
 </head>
@@ -29,18 +29,23 @@
                 </ul>
             </nav>
          
-            <div id="carrito">
-                <!-- Ícono del carrito -->
-                <svg xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" id="carrito-icono">
-                    <path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm9.805-16.5l-3.432 12h-2.102l2.541-9h-5.993c.115.482.181.983.181 1.5 0 3.59-2.91 6.5-6.5 6.5-.407 0-.805-.042-1.191-.114l1.306 3.114h13.239l3.474-12h1.929l.743-2h-4.195zm-6.305 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm-9-15c-2.486 0-4.5 2.015-4.5 4.5s2.014 4.5 4.5 4.5c2.484 0 4.5-2.015 4.5-4.5s-2.016-4.5-4.5-4.5zm-.469 6.484l-1.687-1.636.695-.697.992.94 2.115-2.169.697.696-2.812 2.866z"/>
-                </svg>
-                <!-- Contenido del carrito -->
-                <div id="carrito-dropdown">
-                    <!-- Aquí va el contenido del carrito (productos, subtotal, etc.) -->
-                    <!-- Mostrar la cantidad de productos en el carrito -->
-                    <p id="cantidad-productos">0 productos en el carrito</p>
-                    <!-- Botón Ir a Whatsapp -->
-                    <button id="ir-a-whatsapp">Ir a Whatsapp</button>
+            <div class="header-section-container">
+                <div>
+                    <svg class="cart" xmlns="http://www.w3.org/2000/svg" width="45" height="45" viewBox="0 0 24 24" id="carrito-icono">
+                        <path d="M10 19.5c0 .829-.672 1.5-1.5 1.5s-1.5-.671-1.5-1.5c0-.828.672-1.5 1.5-1.5s1.5.672 1.5 1.5zm9.805-16.5l-3.432 12h-2.102l2.541-9h-5.993c.115.482.181.983.181 1.5 0 3.59-2.91 6.5-6.5 6.5-.407 0-.805-.042-1.191-.114l1.306 3.114h13.239l3.474-12h1.929l.743-2h-4.195zm-6.305 15c-.828 0-1.5.671-1.5 1.5s.672 1.5 1.5 1.5 1.5-.671 1.5-1.5c0-.828-.672-1.5-1.5-1.5zm-9-15c-2.486 0-4.5 2.015-4.5 4.5s2.014 4.5 4.5 4.5c2.484 0 4.5-2.015 4.5-4.5s-2.016-4.5-4.5-4.5zm-.469 6.484l-1.687-1.636.695-.697.992.94 2.115-2.169.697.696-2.812 2.866z"/>
+                    </svg>
+                    <p class="count-product">0</p>
+                </div>
+                <div class="cart-products" id="products-id">
+                    <p class="close-btn" onclick="closeBtn()">X</p>
+                    <h3>Mi carrito</h3>
+                    <div class="card-items">
+                        <!-- Contenido de los productos -->
+                    </div>
+                    <h2>Total: $<strong class="price-total">0</strong></h2>
+                    <a href="https://wa.me/+5491152291799" class="btn-whatsapp" target="_blank">Ir a WhatsApp</a>
+
+
                 </div>
             </div>
         </header>
@@ -60,7 +65,7 @@
                         </div>
                         <h3>Remeras Adidas / Nike </h3>
                         <p>Precio: $5000</p>
-                         <button class="add-to-cart" data-product-id="1">Añadir al Carrito</button>
+                         <button class="btn-add-cart" data-id="1">Añadir al Carrito</button>
                         <button class="view-more">Ver Más</button>
                     </div>
     
@@ -77,7 +82,7 @@
                     </div>
                     <h3>Remeras Adidas </h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="2">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="2">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
     
@@ -94,7 +99,7 @@
                     </div>
                     <h3>Remeras Lacoste / Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="3">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="3">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
     
@@ -109,7 +114,7 @@
                     </div>
                     <h3>Remeras Lacoste / Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="4">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="4">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
 
@@ -124,7 +129,7 @@
                     </div>
                     <h3>Remeras Lacoste / Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="5">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="5">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
 
@@ -139,7 +144,7 @@
                     </div>
                     <h3>Remeras Lacoste / Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="6">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="6">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
 
@@ -154,7 +159,7 @@
                     </div>
                     <h3>Remeras Lacoste / Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="7">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="7">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
 
@@ -169,7 +174,7 @@
                     </div>
                     <h3>Remeras Lacoste / Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="8">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="8">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
 
@@ -187,7 +192,7 @@
                     </div>
                     <h3>Remeras NBA</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="9">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="9">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
             </div>
@@ -213,7 +218,7 @@
                     </div>
                     <h3>Remeras Adidas / Nike </h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="10">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="10">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
     
@@ -230,7 +235,7 @@
                     </div>
                     <h3>Remerones Oversize Adidas </h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="11">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="11">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
     
@@ -247,7 +252,7 @@
                     </div>
                     <h3>Remeras Adidas</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="12">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="12">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
 
@@ -262,7 +267,7 @@
                     </div>
                     <h3>Top Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="13">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="13">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
 
@@ -277,7 +282,7 @@
                     </div>
                     <h3>Remeras Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="14">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="14">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
 
@@ -292,7 +297,7 @@
                     </div>
                     <h3>Sudaderas</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="15">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="15">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
     
@@ -319,7 +324,7 @@
                     </div>
                     <h3>Remeras Adidas / Nike </h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="16">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="16">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
     
@@ -336,7 +341,7 @@
                     </div>
                     <h3>Remeras Adidas </h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="17">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="17">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
     
@@ -353,7 +358,7 @@
                     </div>
                     <h3>Remeras Lacoste / Nike</h3>
                     <p>Precio: $5000</p>
-                     <button class="add-to-cart" data-product-id="18">Añadir al Carrito</button>
+                     <button class="btn-add-cart" data-id="18">Añadir al Carrito</button>
                     <button class="view-more">Ver Más</button>
                 </div>
     
@@ -364,9 +369,8 @@
     </div>
   
   
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
   <script src="scriptsPages.js"></script>
+  <script src="carrito.js"></script>
 </body>
 </html>
